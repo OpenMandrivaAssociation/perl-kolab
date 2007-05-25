@@ -1,7 +1,7 @@
 Summary:	Kolab - Perl extension for general Kolab settings
 Name:		perl-kolab
 Version:	5.8.7
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://www.cpan.org
