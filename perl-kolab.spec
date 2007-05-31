@@ -1,13 +1,14 @@
 Summary:	Kolab - Perl extension for general Kolab settings
 Name:		perl-kolab
 Version:	5.8.7
-Release:	%mkrel 4
+Release:	%mkrel 2
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://www.cpan.org
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	mandriva
 Patch0:		perl-kolab-mdv_conf.diff
+Patch1:		perl-kolab-cyrus-imapd_prefork.diff
 BuildRequires:	perl-devel
 BuildRequires:	perl
 BuildArch:	noarch
@@ -71,6 +72,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %setup -q -n %{name}-%{version}
 %patch0 -p0
+%patch1 -p0
 
 cp %{SOURCE1} dist_conf/mandriva
 
