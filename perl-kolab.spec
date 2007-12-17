@@ -32,7 +32,6 @@ Obsoletes:	perl-Kolab-LDAP-Backend-dirservd
 Obsoletes:	perl-Kolab-LDAP-Backend-slurpd
 Obsoletes:	perl-Kolab-Mailer
 Obsoletes:	perl-Kolab-Util
-Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 
