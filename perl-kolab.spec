@@ -35,7 +35,6 @@ Obsoletes:	perl-Kolab-Util
 Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
-
  * Kolab contains code used for loading the configuration values from
    kolab.conf and LDAP, as well as functions for logging.
 
