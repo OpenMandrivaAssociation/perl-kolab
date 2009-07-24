@@ -1,14 +1,17 @@
 Summary:	Kolab - Perl extension for general Kolab settings
 Name:		perl-kolab
 Version:	5.8.7
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://www.cpan.org
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	mandriva
+Source2:	syncrepl.pm
 Patch0:		perl-kolab-mdv_conf.diff
 Patch1:		perl-kolab-cyrus-imapd_prefork.diff
+Patch2:		LDAP.pm.in.diff
+Patch3:		Makefile.in.diff
 BuildRequires:	perl-devel
 BuildRequires:	perl
 BuildArch:	noarch
@@ -20,6 +23,7 @@ Provides:	perl-Kolab-LDAP = %{version}
 Provides:	perl-Kolab-LDAP-Backend = %{version}
 Provides:	perl-Kolab-LDAP-Backend-dirservd = %{version}
 Provides:	perl-Kolab-LDAP-Backend-slurpd = %{version}
+Provides:	perl-Kolab-LDAP-Backend-syncrelpl = %{version}
 Provides:	perl-Kolab-Mailer = %{version}
 Provides:	perl-Kolab-Util = %{version}
 Obsoletes:	perl-Kolab
@@ -59,9 +63,6 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
  * Kolab::LDAP::Backend::dirservd module for use with Kolab.
 
- * Kolab::LDAP::Backend::slurpd module for use with Kolab.
-
-
  * Kolab::Mailer allows callers to send out various types of email, namely
    plain, multipart & binary through sendmail.
 
@@ -72,8 +73,11 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 %setup -q -n %{name}-%{version}
 %patch0 -p0
 %patch1 -p0
+%patch2 -p0
+%patch3 -p0
 
 cp %{SOURCE1} dist_conf/mandriva
+cp %{SOURCE2} Kolab-LDAP-Backend/syncrepl.pm.in
 
 # cleanup
 for i in `find . -type d -name CVS`  `find . -type d -name .svn` `find . -type f -name .cvs\*` `find . -type f -name .#\*`; do
@@ -105,7 +109,6 @@ pod2man Kolab-LDAP/LDAP.pm > man/Kolab::LDAP.3
 pod2man Kolab-LDAP-Backend/Backend.pm > man/Kolab::LDAP::Backend.3
 pod2man Kolab-LDAP-Backend-ad/ad.pm > man/Kolab::LDAP::Backend::ad.3
 pod2man Kolab-LDAP-Backend-dirservd/dirservd.pm > man/Kolab::LDAP::Backend::dirservd.3
-pod2man Kolab-LDAP-Backend-slurpd/slurpd.pm > man/Kolab::LDAP::Backend::slurpd.3
 pod2man Kolab-Mailer/Mailer.pm > man/Kolab::Mailer.3
 pod2man Kolab-Util/Util.pm > man/Kolab::Util.3
 
@@ -133,4 +136,5 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/Kolab/*.pm
 %{perl_vendorlib}/Kolab/LDAP/Backend/*.pm
 %{perl_vendorlib}/Kolab/LDAP/Backend.pm
+
 %{_mandir}/man3/*
