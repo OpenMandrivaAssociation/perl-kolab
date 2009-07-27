@@ -2,9 +2,10 @@ Summary:	Kolab - Perl extension for general Kolab settings
 Name:		perl-kolab
 Version:	5.8.7
 Release:	%mkrel 9
-License:	GPL or Artistic
+Epoch:        	1
+License:	GPL
 Group:		Development/Perl
-URL:		http://www.cpan.org
+URL:		http://kolab.org/cgi-bin/viewcvs-kolab.cgi/server/perl-kolab/
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	mandriva
 Source2:	syncrepl.pm
