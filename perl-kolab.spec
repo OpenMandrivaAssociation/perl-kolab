@@ -1,8 +1,7 @@
-%define 	subrel 1
 Summary:	Kolab - Perl extension for general Kolab settings
 Name:		perl-kolab
 Version:	5.8.7
-Release:	%mkrel 8
+Release:	%mkrel 9
 Epoch:        	0
 License:	GPL
 Group:		Development/Perl
