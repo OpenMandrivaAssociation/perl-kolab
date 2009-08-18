@@ -85,10 +85,6 @@ for i in `find . -type d -name CVS`  `find . -type d -name .svn` `find . -type f
     if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
 done
 
-# strip away annoying ^M
-find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
-find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
-
 # fix perl_vendordir
 perl -pi -e "s|perl_vendorlib|%{perl_vendorlib}|g" dist_conf/mandriva
 
