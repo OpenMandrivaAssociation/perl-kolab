@@ -1,6 +1,5 @@
 %define upstream_name		kolab
-%define upstream_version	2.2.3
-%define	_cvsdate cvs20090719
+%define upstream_version	2.2.4
 
 
 Name:		perl-%{upstream_name}
@@ -14,8 +13,8 @@ Url:		http://kolab.org/cgi-bin/viewcvs-kolab.cgi/server/perl-kolab/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		Makefile.PL.diff
 Patch1:		kolab_bootstrap.diff
-Provides:	perl-kolab = 2.2.3
-Obsoletes:	perl-kolab <= 5.10.0
+Provides:	perl-kolab = %upstream_version
+Obsoletes:	perl-kolab < %upstream_version
 Requires:	perl >= 5.10.0
 Requires:	perl-Mail-IMAPClient
 Requires:	perl-Convert-ASN1
@@ -53,7 +52,7 @@ Perl Modules for use with the Kolab Server
 install -d %{buildroot}%{_initrddir}
 
 # make symlinks for kolabd, because it is used from the intidir
-%__ln_s %{_sbindir}/kolabd  %{buildroot}%{_initrddir}/kolabd
+%__ln_s %{_bindir}/kolabd  %{buildroot}%{_initrddir}/kolabd
 
 %clean
 %__rm -rf %{buildroot}
