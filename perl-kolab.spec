@@ -15,7 +15,7 @@ Patch0:		Makefile.PL.diff
 Patch1:		kolab_bootstrap.diff
 Provides:	perl-kolab = %upstream_version
 Obsoletes:	perl-kolab < %upstream_version
-Requires:	perl >= 5.10.0
+Requires:	perl >= 5.12.0
 Requires:	perl-Mail-IMAPClient
 Requires:	perl-Convert-ASN1
 Requires:	perl-Cyrus
