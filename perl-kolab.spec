@@ -83,7 +83,5 @@ install -d %{buildroot}%{_initrddir}
 %{_sbindir}/kolabcheckperm
 %{_sbindir}/kolabconf
 %{_sbindir}/kolabd
-%{_mandir}/man3/*.lzma
-%{_mandir}/man1/*.lzma
-
-
+%{_mandir}/man3/*
+%{_mandir}/man1/*
