@@ -1,0 +1,13 @@
+--- sbin/kolab_bootstrap.in	2009-02-18 04:44:12.000000000 -0700
++++ sbin/kolab_bootstrap.in.thomas	2009-10-31 08:52:18.000000000 -0700
+@@ -445,8 +445,8 @@
+       print "temporarily starting slapd\n";
+       $ldap_uri = "ldap://127.0.0.1:389/";
+       # ensure that the database has correct permissions
+-      system("chown $Kolab::config{'ldapserver_rusr'}:$Kolab::config{'ldapserver_grp'} $Kolab::config{'ldapserver_dir'}/*");
+-      (system("$Kolab::config{'libexecdir'}/openldap/slapd -h ldap://127.0.0.1:389/ -f $Kolab::config{'ldapserver_confdir'}/slapd.conf -u $Kolab::config{'ldapserver_rusr'} -g $Kolab::config{'ldapserver_grp'}") == 0 ) || die( "Could not start temporary slapd: $!" );
++      system("chown $Kolab::config{'ldapserver_rusr'}:$Kolab::config{'ldapserver_grp'} $Kolab::config{'ldapserver_dir'}");
++      (system("$Kolab::config{'sbindir'}/slapd -h ldap://127.0.0.1:389/ -f $Kolab::config{'ldapserver_confdir'}/slapd.conf -u $Kolab::config{'ldapserver_rusr'} -g $Kolab::config{'ldapserver_grp'}") == 0 ) || die( "Could not start temporary slapd: $!" );
+       print ("Waiting for OpenLDAP to start\n");
+       sleep 10;
+ 

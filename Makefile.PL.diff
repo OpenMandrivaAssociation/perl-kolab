@@ -1,0 +1,22 @@
+--- Makefile.PL	2009-11-24 11:57:08.000000000 -0700
++++ Makefile.PL.thomas	2010-01-18 20:23:24.000000000 -0700
+@@ -100,7 +100,7 @@
+     {
+ 	copy("../kolab.mk", "./") or die "Could not copy ../kolab.mk";
+     }
+-    my $add = "include kolab.mk
++    my $add = "
+ 
+ PACKAGE = \$(shell [ -r \"perl-kolab.spec\" ] && grep '%define[ ]*V_package' perl-kolab.spec | sed -e 's/.*V_package\\s*\\([a-z\\_-]*\\).*/\\1/')
+ VERSION = \$(shell perl -I lib -e 'use Kolab;print \$\$Kolab::KOLAB_VERSION;')
+@@ -131,9 +131,7 @@
+ 	  cp \$\$ETC \$(DESTDIR)/$INSTALLETC;        \\
+ 	done
+ 
+-ifeq \"x\$(PLATTAG)\" \"x\"
+-	PLATTAG = \$(shell \$(RPM) -q --qf=\"%{ARCH}-%{OS}\" openpkg)-\$(KOLABDIR:/%=%)
+-endif
++
+ 
+ clean_tardist:
+ 	rm -rf *.tar.gz
