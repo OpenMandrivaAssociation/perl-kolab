@@ -5,7 +5,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%{upstream_version}
-Release:	8
+Release:	9
 Epoch:		2
 Summary:	Perl Modules for use with the Kolab Server
 License:	GPL
