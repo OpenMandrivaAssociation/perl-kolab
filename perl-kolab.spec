@@ -10,7 +10,7 @@ Epoch:		2
 Summary:	Perl Modules for use with the Kolab Server
 License:	GPL
 Group:		Development/Perl
-Url:		http://kolab.org/cgi-bin/viewcvs-kolab.cgi/server/perl-kolab/
+Url:		https://kolab.org/cgi-bin/viewcvs-kolab.cgi/server/perl-kolab/
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		Makefile.PL.diff
 Patch1:		kolab_bootstrap.diff
